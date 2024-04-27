@@ -5,13 +5,13 @@ Module that generates Pascal's Triangle for a given number of rows.
 
 
 def pascal_triangle(n):
-    """
-    Generate Pascal's Triangle with `n` rows.
-    Args:
-        n (int): Number of rows to generate.
-    Returns:
-        list of lists: A list containing rows of Pascal's Triangle.
-    """ 
+"""
+Generate Pascal's Triangle with `n` rows.
+Args:
+n (int): Number of rows to generate.
+Returns:
+list of lists: A list containing rows of Pascal's Triangle.
+""" 
     if n <= 0:
         return []
         triangle = []
