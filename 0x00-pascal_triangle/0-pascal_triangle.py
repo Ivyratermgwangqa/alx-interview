@@ -14,8 +14,8 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-        triangle = []
-        row = [1]  # First row is always [1]
+    triangle = []
+    row = [1]  # First row is always [1]
     for _ in range(n):
         triangle.append(row)  # Add the current row to the triangle
         new_row = []
