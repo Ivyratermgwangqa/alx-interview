@@ -1,34 +1,44 @@
 #!/usr/bin/python3
+"""
+Module to create Pascal's Triangle of a given size `n`.
+"""
+
 def pascal_triangle(n):
     """
-    Generate Pascal's Triangle with 'n' rows.
+    Create Pascal's Triangle with `n` rows.
 
-    Pascal's Triangle is a triangular array of binomial coefficients.
-    This function returns a list of lists where each inner list represents
-    a row in the triangle.
+    :param n: Number of rows for Pascal's Triangle
+    :return: List of lists representing Pascal's Triangle
 
-    Args:
-    - n (int): The number of rows to generate. Must be an integer.
-
-    Returns:
-    - List[List[int]]: A list of lists representing Pascal's Triangle.
-      If 'n' is less than or equal to zero, returns an empty list.
+    Returns an empty list if `n` is less than or equal to 0.
     """
     if n <= 0:
         return []
 
-    # The triangle starts with the first row [1]
-    triangle = [[1]]
-
-    # Generate each subsequent row
-    for i in range(1, n):
-        prev_row = triangle[-1]  # Get the last row
-        new_row = [1]  # Each row starts with 1
-        # Calculate the inner elements based on the previous row
-        for j in range(1, i):
-            # Add adjacent elements from the previous row
-            new_row.append(prev_row[j - 1] + prev_row[j])
-        new_row.append(1)  # Each row ends with 1
-        triangle.append(new_row)
-
+    # List to store all rows of Pascal's Triangle
+    triangle = []
+    
+    # First row is always [1]
+    row = [1]
+    
+    # Add each row to the triangle and compute the next row
+    for _ in range(n):
+        triangle.append(row)  # Add the current row to the triangle
+        
+        # Generate the next row based on the current row
+        new_row = []
+        
+        # Add the first '1'
+        new_row.append(1)
+        
+        # Compute the elements in between
+        for i in range(1, len(row)):
+            new_row.append(row[i - 1] + row[i])
+        
+        # Add the last '1'
+        new_row.append(1)
+        
+        # Set the new row for the next iteration
+        row = new_row
+    
     return triangle
