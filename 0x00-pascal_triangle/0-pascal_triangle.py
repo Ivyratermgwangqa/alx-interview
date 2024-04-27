@@ -5,8 +5,6 @@ Module that generates Pascal's Triangle for a given number of rows.
 
 
 def pascal_triangle(n):
-
-    
     """
     Generate Pascal's Triangle with `n` rows.
     Args:
