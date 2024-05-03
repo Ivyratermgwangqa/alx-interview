@@ -2,12 +2,10 @@
 
 """
 Module: 0-lockboxes
-Description: This module contains a function `canUnlockAll` to determine whether all boxes
-             in a given list of lists can be unlocked given the keys in the boxes.
-             
+Description: This module contains a function `canUnlockAll`
+             in a given list of lists can be unlocked.           
 Usage:
-    To use the function `canUnlockAll`, import the module and pass a list of lists.
-    
+    To use the function `canUnlockAll`, import the module.
     Example:
         from 0-lockboxes import canUnlockAll
         boxes = [[1], [2], [3], [4], []]
@@ -20,7 +18,7 @@ Notes:
     This module is part of the ALX interview practice projects.
 """
 
-# Function to check if all boxes can be unlocked
+
 def canUnlockAll(boxes):
     """
     Determines if all boxes can be unlocked based on the keys within them.
