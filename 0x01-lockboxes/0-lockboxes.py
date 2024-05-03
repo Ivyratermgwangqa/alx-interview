@@ -3,7 +3,7 @@
 """
 Module: 0-lockboxes
 Description: This module contains a function `canUnlockAll`
-             in a given list of lists can be unlocked.           
+             in a given list of lists can be unlocked.
 Usage:
     To use the function `canUnlockAll`, import the module.
     Example:
