@@ -25,7 +25,8 @@ def minOperations(n):
     7
     """
     if n <= 1:
-      return 0
+        return 0
+
     operations = 0
     divisor = 2
     while divisor <= n:
