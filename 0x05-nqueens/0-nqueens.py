@@ -5,11 +5,12 @@ import sys
 def is_safe(board, row, col):
     """Check if it's safe to place a queen at board[row][col]."""
     for i in range(row):
-        if board[i] == col or \
-           board[i] - i == col - row or \
-           board[i] + i == col + row:
+        if (board[i] == col or
+                board[i] - i == col - row or
+                board[i] + i == col + row):
             return False
     return True
+
 
 def solve_nqueens(N):
     """Solve the N queens problem and print all solutions."""
@@ -27,11 +28,13 @@ def solve_nqueens(N):
     solve(0)
     return solutions
 
+
 def print_solutions(solutions):
     """Print the solutions in the required format."""
     for solution in solutions:
         formatted_solution = [[i, solution[i]] for i in range(len(solution))]
         print(formatted_solution)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -50,4 +53,4 @@ if __name__ == "__main__":
 
     solutions = solve_nqueens(N)
     print_solutions(solutions)
-  
+    
