@@ -69,5 +69,3 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 - This project is part of the curriculum for the ALX Software Engineering program.
 - Special thanks to the authors of the resources listed in the "Additional Resources" section for their helpful tutorials and documentation.
 ```
-
-You can save this content in a file named `README.md` in your project directory. This file provides a comprehensive overview of the project, including usage instructions, implementation details, and an example run.
