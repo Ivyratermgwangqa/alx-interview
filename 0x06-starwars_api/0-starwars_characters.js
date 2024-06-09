@@ -1,35 +1,22 @@
 #!/usr/bin/node
 
-const fetch = require('node-fetch');
-
+const request = require('request');
 const movieId = process.argv[2];
-if (!movieId) {
-  console.error('Please provide a Movie ID');
-  process.exit(1);
-}
+const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-const apiUrl = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
-
-async function fetchCharacters() {
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const filmData = await response.json();
-    const characters = filmData.characters;
-
-    for (const characterUrl of characters) {
-      const charResponse = await fetch(characterUrl);
-      if (!charResponse.ok) {
-        throw new Error(`HTTP error! status: ${charResponse.status}`);
-      }
-      const characterData = await charResponse.json();
-      console.log(characterData.name);
-    }
-  } catch (error) {
-    console.error(error);
+request(url, async (err, response, body) => {
+  if (err) {
+    console.log(err);
   }
-}
-
-fetchCharacters();
+  for (const characterId of JSON.parse(body).characters) {
+    await new Promise((resolve, reject) => {
+      request(characterId, (err, response, body) => {
+        if (err) {
+          reject(err);
+        }
+        console.log(JSON.parse(body).name);
+        resolve();
+      });
+    });
+  }
+});
