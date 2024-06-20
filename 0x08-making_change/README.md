@@ -1,4 +1,4 @@
-# Coin Change Problem
+# 0x08. Making Change
 
 This project tackles the classic coin change problem using dynamic programming. The goal is to find the minimum number of coins required to make up a given total amount from a list of coin denominations.
 
