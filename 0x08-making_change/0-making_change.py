@@ -3,7 +3,6 @@
 Coin Change Problem
 """
 
-
 def makeChange(coins, total):
     """
     Determine the fewest number of coins needed to meet the total.
@@ -18,14 +17,17 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
-    # Initialize the dp array with infinity for all values except 0
-    dp = [float('inf')] * (total + 1)
+    
+    # Initialize the dp array with a value larger than any possible number of coins needed
+    dp = [total + 1] * (total + 1)
     dp[0] = 0
+
+    # Sort coins to optimize the inner loop (optional but can help in some cases)
+    coins.sort()
 
     # Fill the dp array
     for coin in coins:
         for i in range(coin, total + 1):
-            if dp[i - coin] != float('inf'):
-                dp[i] = min(dp[i], dp[i - coin] + 1)
+            dp[i] = min(dp[i], dp[i - coin] + 1)
 
-    return dp[total] if dp[total] != float('inf') else -1
+    return dp[total] if dp[total] <= total else -1
