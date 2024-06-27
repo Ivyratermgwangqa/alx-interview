@@ -63,7 +63,7 @@ The function call `island_perimeter(grid)` should return `12`.
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your_username/alx-interview.git
+   git clone https://github.com/Ivyratermgwangqa/alx-interview.git
    ```
 
 2. Navigate to the project directory:
